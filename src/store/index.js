@@ -5,6 +5,6 @@ import Vue from "vue";
 Vue.use(Vuex);
 
 new Vuex.Store({
-    modules: { User },
-    deep: true
+  modules: { User },
+  deep: true
 });

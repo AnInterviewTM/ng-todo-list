@@ -1,15 +1,15 @@
-<script>
-    export default {
-        data() {
-            return {};
-        },
-    };
-</script>
-
 <template>
-    <div>
-        <DefaultLayout>
-            <div>home-page</div>
-        </DefaultLayout>
-    </div>
+  <DefaultLayout>
+    <b-container fluid="sm">home-page</b-container>
+  </DefaultLayout>
 </template>
+
+<script lang="js">
+  export default {
+    data() {
+      return {
+        formData: {}
+      };
+    }
+  };
+</script>

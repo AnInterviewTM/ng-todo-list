@@ -1,16 +1,22 @@
-<script lang="js">
-    export default {
-        name: "DefaultLayout",
-    };
-</script>
-
 <template>
-    <div>
-        default-layout
-        <slot></slot>
-    </div>
+  <section>
+    <HeaderModule></HeaderModule>
+    <slot></slot>
+  </section>
 </template>
 
+<script lang="js">
+  export default {
+    name: "DefaultLayout",
+
+    data() {
+      return {
+        formData: {}
+      };
+    }
+  };
+</script>
+
 <style lang="scss">
-    @import "default-layout.scss";
+  @import "default-layout.scss";
 </style>

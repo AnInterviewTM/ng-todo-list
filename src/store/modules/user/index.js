@@ -1,8 +1,8 @@
 export const User = {
-    namespaced: true,
-    state: {},
-    getters: {},
-    mutations: {},
-    actions: {},
-    modules: {}
+  namespaced: true,
+  state: {},
+  getters: {},
+  mutations: {},
+  actions: {},
+  modules: {}
 };
