@@ -5,8 +5,8 @@ import Vue from "vue";
 Vue.use(VueRouter);
 
 const router = new VueRouter({
-    routes: [...COMMON_ROUTER],
-    base: process.env.BASE_URL,
+  routes: [...COMMON_ROUTER],
+  base: process.env.BASE_URL
 });
 
 export default router;
