@@ -7,5 +7,9 @@
 </script>
 
 <template>
-    <div>home-page</div>
+    <div>
+        <DefaultLayout>
+            <div>home-page</div>
+        </DefaultLayout>
+    </div>
 </template>
