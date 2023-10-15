@@ -1,0 +1,21 @@
+.button {
+  &--style {
+    &_green {
+      padding: 10px 30px 10px 30px;
+      background: var(--green-1);
+      color: var(--white-1);
+      font-weight: var(--bold);
+    }
+
+    &_grays {
+      padding: 10px 30px 10px 30px;
+      background: var(--grays-1);
+      color: var(--white-1);
+      font-weight: var(--bold);
+    }
+  }
+
+  outline: none;
+  border: none;
+  width: 100%;
+}

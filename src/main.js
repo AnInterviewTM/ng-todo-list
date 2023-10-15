@@ -6,6 +6,8 @@ import App from "./App.vue";
 
 import Vue from "vue";
 
+import "../styles/index.scss";
+
 Vue.config.productionTip = false;
 Vue.use(install);
 

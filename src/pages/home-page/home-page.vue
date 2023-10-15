@@ -1,7 +1,9 @@
 <template>
-  <DefaultLayout>
-    <b-container fluid="sm">home-page</b-container>
-  </DefaultLayout>
+  <NgTodoListDefaultLayout>
+    <b-container fluid="sm">
+      <section class="section">Home page content</section>
+    </b-container>
+  </NgTodoListDefaultLayout>
 </template>
 
 <script lang="js">

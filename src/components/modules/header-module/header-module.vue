@@ -11,7 +11,13 @@
             </b-row>
           </b-col>
           <b-col cols="auto">
-            <button>LOGIN</button>
+            <NgTodoListModalComposer component-name="NgTodoListAuthForm">
+              <template #default="{ handler }">
+                <NgTodoListButtonControl class="button button--style_green" @event="handler"
+                  >AUTH</NgTodoListButtonControl
+                >
+              </template>
+            </NgTodoListModalComposer>
           </b-col>
         </b-row>
       </b-container>
@@ -23,13 +29,13 @@
   import { COMMON_ROUTER } from "../../../router/commons";
 
   export default {
-    name: "HeaderModule",
+    name: "NgTodoListHeaderModule",
 
     data() {
       return {
         menu: COMMON_ROUTER,
       };
-    }
+    },
   };
 </script>
 

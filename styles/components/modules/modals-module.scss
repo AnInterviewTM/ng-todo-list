@@ -1,0 +1,37 @@
+#modals-container {
+  .vm--container {
+    .vm--overlay {
+      background: rgba(0, 0, 0, 0.7) !important;
+      transition: all 0.3s ease !important;
+    }
+
+    .vm--modal {
+      transform: translate(-50%, -50%) !important;
+      background: var(--white-1) !important;
+      border-radius: 4px !important;
+      max-height: 90vh !important;
+      max-width: calc(100% - 24px) !important;
+      width: 400px !important;
+      left: 50% !important; top: 50% !important;
+
+      .vm--modal-headers {
+        background: var(--grays-1);
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        display: flex;
+        height: 40px;
+
+        font-weight: var(--bold);
+      }
+
+      .vm--modal-content {
+        padding: 24px 24px 24px 24px;
+      }
+
+      .vm--modal-actions {
+        padding: 0 24px 24px 24px;
+      }
+    }
+  }
+}

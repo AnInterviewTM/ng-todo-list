@@ -2,17 +2,18 @@
   &__ {
     &container {
       .router-link-active {
-        color: #198754;
+        color: var(--green-1);
       }
 
-      a {
-        font-weight: 600;
-        color: #000000;
+      a{
+        text-decoration: none;
+        font-weight: var(--bold);
+        color: var(--black-1);
       }
 
-      padding: 12px 0;
+      padding: 12px 0 12px 0;
     }
   }
 
-  background-color: #e2e2e2;
+  background: var(--white-1);
 }
