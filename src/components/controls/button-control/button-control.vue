@@ -24,12 +24,8 @@
       disabled: {
         default: () => false,
         type: Boolean
-      },
-    },
-
-    data() {
-      return {};
-    },
+      }
+    }
   };
 </script>
 
