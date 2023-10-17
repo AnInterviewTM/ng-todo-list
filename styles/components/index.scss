@@ -1,4 +1,6 @@
-@import "./modules/modals-module.scss";
+@import "./modules/modals-module";
+@import "./caption";
+@import "./color";
 
 .section {
   background: var(--white-1);
@@ -7,4 +9,18 @@
   border-radius: 4px;
   margin: 24px 0;
   padding: 24px;
+}
+
+.row {
+  .col-12 {
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    margin: 12px 0;
+  }
 }

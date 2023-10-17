@@ -30,5 +30,5 @@
 </script>
 
 <style lang="scss">
-  @import "button-control.scss";
+  @import "button-control";
 </style>

@@ -18,5 +18,5 @@
 </script>
 
 <style lang="scss">
-  @import "default-layout.scss";
+  @import "default-layout";
 </style>

@@ -40,5 +40,5 @@
 </script>
 
 <style lang="scss">
-  @import "header-module.scss";
+  @import "header-module";
 </style>

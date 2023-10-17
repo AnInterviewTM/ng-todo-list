@@ -1,0 +1,29 @@
+.input-control {
+  &__ {
+    &error {
+      color: var(--red-2);
+      position: absolute;
+      font-size: 12px;
+      order: 3;
+      bottom: -20px;
+    }
+
+    &field,
+    &input {
+      height: 36px;
+      width: 100%;
+      order: 2;
+    }
+
+    &label {
+      margin-bottom: 5px;
+      font-size: 12px;
+      line-height: 1;
+      order: 1;
+    }
+  }
+
+  flex-direction: column;
+  display: flex;
+  position: relative;
+}

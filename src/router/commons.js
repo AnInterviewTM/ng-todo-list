@@ -1,6 +1,6 @@
 export const COMMON_ROUTER = [
   {
-    component: () => import("../pages/home-page/home-page.vue"),
+    component: () => import("../pages/home-page/home-page"),
     path: "/",
     name: "home-page",
     text: "HOME",
@@ -8,7 +8,7 @@ export const COMMON_ROUTER = [
     icon: null
   },
   {
-    component: () => import("../pages/news-page/news-page.vue"),
+    component: () => import("../pages/news-page/news-page"),
     path: "/news-page",
     name: "news-page",
     text: "NEWS",

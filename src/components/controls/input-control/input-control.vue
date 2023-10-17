@@ -1,7 +1,15 @@
 <template>
-  <ValidationProvider v-slot="{ errors }" :rules="rules">
-    <input v-model="model" :name="name" :type="type" />
-    <div>{{ errors[0] }}</div>
+  <ValidationProvider v-slot="{ errors }" :rules="validationRules">
+    <div class="input-control">
+      <div class="input-control__field">
+        <input
+          class="input-control__input"
+          v-model="formData.input" :name="name" :type="type"
+        />
+      </div>
+      <div class="input-control__label" v-if="label">{{ label }}</div>
+      <div class="input-control__error" v-if="errors.length > 0">{{ errors[0] }}</div>
+    </div>
   </ValidationProvider>
 </template>
 
@@ -10,46 +18,47 @@
     name: "NgTodoListInputControl",
 
     props: {
-      rules: {
+      validationRules: {
         required: false,
-        type: String
+        type: [String, Array],
+      },
+      label: {
+        required: false,
+        type: String,
       },
       name: {
         required: false,
-        type: String
+        type: String,
       },
       type: {
         required: false,
-        type: String
+        type: String,
       },
-      value: {}
+      value: {
+        required: true,
+      },
     },
 
     data() {
       return {
-        input: null
+        formData: {
+          input: this.value
+        }
       };
     },
 
     watch: {
-      value: {
-        immediate: true,
-        deep: true,
-        handler() {
-          this.input = this.value;
-        }
-      }
-    },
+      "formData.input"(newValue) {
+        this.$emit('input', newValue);
+      },
 
-    computed: {
-      model: {
-        get() {
-          return this.input
-        },
-        set(e) {
-          this.input = e
-        },
+      value(newValue) {
+        this.formData.input = newValue;
       },
     },
   };
 </script>
+
+<style lang="scss">
+  @import "./input-control";
+</style>

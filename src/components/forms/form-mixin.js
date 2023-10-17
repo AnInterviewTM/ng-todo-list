@@ -1,4 +1,4 @@
-import { VALIDATE } from "../../validates/index.js";
+import { VALIDATE } from "../../validates/index";
 
 export default {
   methods: {
@@ -22,11 +22,13 @@ export default {
            * Sent request API.
            */
           this.request(data);
+          this.error = [];
         })
         .catch(error => {
           /**
            * Create new error.
            */
+          this.error.push(error);
           console.log(error);
         })
         .finally(() => {
@@ -41,7 +43,7 @@ export default {
     catchErrors(isValid) {
       return new Promise((resolve, reject) => {
         if (!isValid) {
-          reject(new Error("Not work!"));
+          reject("Something went wrong.");
         } else {
           resolve();
         }

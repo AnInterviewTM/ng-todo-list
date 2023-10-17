@@ -1,0 +1,18 @@
+.error-form {
+  &__ {
+    &item {
+      font-weight: var(--bold);
+      font-size: 13px;
+      color: var(--red-2);
+      margin-top: 12px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  background: var(--red-1);
+  list-style: none;
+  padding: 12px;
+}

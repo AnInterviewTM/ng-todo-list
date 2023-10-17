@@ -1,7 +1,7 @@
 import controls from "./controls/index";
 import forms from "./forms/index";
 import modules from "./modules/index";
-import Empty from "./empty.vue";
+import Empty from "./empty";
 
 export default function iComponents(Vue) {
   Vue.use(controls);
