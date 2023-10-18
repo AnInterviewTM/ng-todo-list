@@ -6,7 +6,10 @@
           <b-row align-h="between" align-v="center">
             <b-col>
               <h6 class="caption caption--fs_sm">
-                <strong>ID: {{ objectItem.id }} USER_ID: {{ objectItem.userId }}</strong>
+                <strong
+                  >ID: {{ objectItem.id }} USER_ID:
+                  {{ objectItem.userId }}</strong
+                >
               </h6>
             </b-col>
             <b-col cols="auto">
@@ -52,6 +55,11 @@
     },
 
     methods: {
+      isFavorite(item) {
+        const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+        return favorites.some(fav => fav.id === item.id);
+      },
+
       toggleFavorite() {
         const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
         const index = favorites.findIndex(fav => fav.id === this.objectItem.id);
@@ -67,15 +75,10 @@
         localStorage.setItem("favorites", JSON.stringify(favorites));
         this.$emit("favorite-updated");
       },
-
-      isFavorite(item) {
-        const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-        return favorites.some(fav => fav.id === item.id);
-      }
     }
   };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   @import "./todos-card";
 </style>
