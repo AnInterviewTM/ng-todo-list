@@ -20,10 +20,10 @@
       <b-col cols="12" v-if="showCols">
         <h4 class="todos-info__caption mt-3">{{ getStatusText() }}</h4>
         <div class="todos-info__container p-4 mt-3">
-          <div v-if="filteredTodos.length === 0">
+          <div v-if="filteredByFavorite.length === 0">
             <h6 class="caption caption--size_sm">NO ANY ITEM BY FILTER</h6>
           </div>
-          <NgTodoListTodosCard v-for="todo in filteredTodos" :key="todo.id" :object-item="todo"></NgTodoListTodosCard>
+          <NgTodoListTodosCard v-for="todo in filteredByFavorite" :key="todo.id" :objectItem="todo" @favorite-updated="updateFavorite" />
         </div>
       </b-col>
     </b-row>
@@ -69,12 +69,18 @@
       };
     },
     computed: {
+      filteredByFavorite() {
+        if (this.filter.selected === 3) {
+          return this.filteredTodos.filter(todo => this.isFavoriteSelected(todo));
+        }
+        return this.filteredTodos;
+      },
       filteredTodos() {
         return this.objectList.filter(this.filterTodo);
       },
       showCols() {
         return [0, 1, 2, 3].includes(this.filter.selected);
-      }
+      },
     },
     methods: {
       filterTodo(todo) {
@@ -100,6 +106,9 @@
       isFavoriteSelected(todo) {
         return this.favorites.some(fav => fav.id === todo.id);
       },
+      updateFavorite() {
+        this.favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+      }
     }
   };
 </script>

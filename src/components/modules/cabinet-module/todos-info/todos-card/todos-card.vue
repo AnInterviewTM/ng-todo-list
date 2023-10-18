@@ -6,10 +6,7 @@
           <b-row align-h="between" align-v="center">
             <b-col>
               <h6 class="caption caption--fs_sm">
-                <strong
-                  >ID: {{ objectItem.id }} USER_ID:
-                  {{ objectItem.userId }}</strong
-                >
+                <strong>ID: {{ objectItem.id }} USER_ID: {{ objectItem.userId }}</strong>
               </h6>
             </b-col>
             <b-col cols="auto">
@@ -68,6 +65,7 @@
         }
 
         localStorage.setItem("favorites", JSON.stringify(favorites));
+        this.$emit("favorite-updated");
       },
 
       isFavorite(item) {
