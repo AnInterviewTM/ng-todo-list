@@ -9,7 +9,7 @@
         ref="observer" tag="form"
       >
         <b-row class="bv-example-row">
-          <b-col cols="12">
+          <b-col cols="12" class="mb-4">
             <h6 class="caption caption--fs_sm">
               Enter an alphabetic value for the
               <strong class="c--red-2">username</strong>
@@ -18,7 +18,7 @@
               <strong class="c--red-2">phone</strong>.
             </h6>
           </b-col>
-          <b-col cols="12">
+          <b-col cols="12" class="mb-4">
             <NgTodoListInputControl
               v-model="formData.username"
               rules="required|min:3"
@@ -41,7 +41,7 @@
     </div>
     <div class="vm--modal-actions">
       <NgTodoListButtonControl
-        class="button button--style_green"
+        class="button button--style_darks"
         @event="validateBeforeSubmit(formData)"
       >LOGIN</NgTodoListButtonControl>
     </div>

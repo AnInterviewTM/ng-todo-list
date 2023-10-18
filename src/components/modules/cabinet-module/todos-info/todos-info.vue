@@ -35,15 +35,11 @@
     name: "NgTodosListTodoInfo",
     props: {
       objectList: {
-        type: Array,
-        default: () => []
+        default: () => [],
+        type: Array
       }
     },
     data() {
-      const userIds = [...new Set(this.objectList.map(todo => todo.userId))];
-      const favoriteData = localStorage.getItem("favorites");
-      const favorites = favoriteData ? JSON.parse(favoriteData) : [];
-
       return {
         filter: {
           selected: 0,
@@ -55,18 +51,15 @@
           ]
         },
         userId: {
-          selected: 0,
-          list: [
-            { value: 0, text: "ALL_USERS" },
-            ...userIds.map(userId => ({
-              value: userId,
-              text: `USER_ID: ${userId}`
-            }))
-          ],
+          selected: 0, list: [],
         },
+        favorites: [],
         title: null,
-        favorites: favorites
       };
+    },
+    created() {
+      this.favorites = localStorage.getItem("favorites") ? JSON.parse(localStorage.getItem("favorites")) : [];
+      this.setUserIdOption();
     },
     computed: {
       filteredByFavorite() {
@@ -93,6 +86,13 @@
 
         return isSelectedUser && isTitleMatch;
       },
+      setUserIdOption() {
+        const userIds = [...new Set(this.objectList.map(todo => todo.userId))];
+        this.userId.list = [
+          { value: 0, text: "ALL_USERS" },
+          ...userIds.map(userId => ({ value: userId, text: `USER_ID: ${userId}` }))
+        ]
+      },
       getStatusText() {
         const statusTexts = ["ALL_STATUS", "UNCOMPLETED", "COMPLETED", "FAVORITE"];
         return statusTexts[this.filter.selected];
@@ -103,11 +103,15 @@
       isTitleMatch(title) {
         return !this.title || title.toLowerCase().includes(this.title.toLowerCase());
       },
-      isFavoriteSelected(todo) {
-        return this.favorites.some(fav => fav.id === todo.id);
-      },
       updateFavorite() {
         this.favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+      },
+      setfavoritesList() {
+        const favorites = localStorage.getItem("favorites");
+        this.favorites = favorites ? JSON.parse(favorites) : [];
+      },
+      isFavoriteSelected(todo) {
+        return this.favorites.some(fav => fav.id === todo.id);
       }
     }
   };
