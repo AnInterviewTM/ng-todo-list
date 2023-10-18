@@ -4,11 +4,15 @@
       <div class="input-control__field">
         <input
           class="input-control__input"
-          v-model="formData.input" :name="name" :type="type"
+          v-model="formData.input"
+          :name="name"
+          :type="type"
         />
       </div>
       <div class="input-control__label" v-if="label">{{ label }}</div>
-      <div class="input-control__error" v-if="errors.length > 0">{{ errors[0] }}</div>
+      <div class="input-control__error" v-if="errors.length > 0">
+        {{ errors[0] }}
+      </div>
     </div>
   </ValidationProvider>
 </template>
@@ -20,23 +24,23 @@
     props: {
       rules: {
         required: false,
-        type: [String, Array],
+        type: [String, Array]
       },
       label: {
         required: false,
-        type: String,
+        type: String
       },
       name: {
         required: false,
-        type: String,
+        type: String
       },
       type: {
         required: false,
-        type: String,
+        type: String
       },
       value: {
-        required: true,
-      },
+        required: true
+      }
     },
 
     data() {
@@ -49,16 +53,16 @@
 
     watch: {
       "formData.input"(newValue) {
-        this.$emit('input', newValue);
+        this.$emit("input", newValue);
       },
 
       value(newValue) {
         this.formData.input = newValue;
-      },
-    },
+      }
+    }
   };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   @import "./input-control";
 </style>

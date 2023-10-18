@@ -22,6 +22,6 @@
   };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   @import "./personal-info";
 </style>
