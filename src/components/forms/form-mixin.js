@@ -9,8 +9,6 @@ export default {
     async validateBeforeSubmit(data) {
       const isValid = await VALIDATE(this);
 
-      // console.log(isValid);
-
       /**
        * To block the button at the time of >
        * the request to the server.
@@ -55,19 +53,5 @@ export default {
         }
       });
     },
-
-    /**
-     *  If suddenly, well, maybe you need >
-     *  to clear the form, then here.
-     *  Cleaning will be the key that we >
-     *  choose ourselves. But it has to be.
-     *  @param { String } key - State key.
-     */
-    clearStateKey(key) {
-      /** Clear this state { key } */
-      Object.entries(this[key]).forEach(([el]) => {
-        this[key][el] = null;
-      });
-    }
   }
 };

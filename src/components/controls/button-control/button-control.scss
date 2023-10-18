@@ -8,6 +8,14 @@
       padding: 10px;
     }
 
+    &_green {
+      background: var(--green-1);
+      font-weight: var(--bold);
+      color: var(--white-1);
+      display: inline-block;
+      padding: 10px;
+    }
+
     &_grays {
       font-weight: var(--bold);
       color: var(--white-1);
