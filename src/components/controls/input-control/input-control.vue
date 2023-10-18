@@ -1,5 +1,5 @@
 <template>
-  <ValidationProvider v-slot="{ errors }" :rules="validationRules">
+  <ValidationProvider v-slot="{ errors }" :rules="rules">
     <div class="input-control">
       <div class="input-control__field">
         <input
@@ -18,7 +18,7 @@
     name: "NgTodoListInputControl",
 
     props: {
-      validationRules: {
+      rules: {
         required: false,
         type: [String, Array],
       },

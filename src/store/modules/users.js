@@ -1,26 +1,25 @@
-import { getUsersAPI } from "../../request/services/users";
+// import { getUsersAPI } from "../../request/services/users";
 
 export const usersModule = {
   namespaced: true,
 
   actions: {
-    async getUsersAPI({ commit }) {
-      return getUsersAPI()
-        .then(responce => {
-          commit("setUsers", responce);
-        })
+    setCurrentUser({ commit }, data) {
+      commit("setCurrentUser", data);
     }
   },
 
   mutations: {
-    setUsers: (state, response) => {
-      state.users = response;
+    setCurrentUser: (state, response) => {
+      state.currentUser = response;
     }
   },
 
-  state: { users: [] },
+  state: {
+    currentUser: {},
+  },
 
   getters: {
-    getUsers: state => state.users
+    getCurrentUser: state => state.currentUser
   }
 };

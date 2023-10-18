@@ -9,6 +9,8 @@ export default {
     async validateBeforeSubmit(data) {
       const isValid = await VALIDATE(this);
 
+      // console.log(isValid);
+
       /**
        * To block the button at the time of >
        * the request to the server.
@@ -21,14 +23,18 @@ export default {
           /**
            * Sent request API.
            */
+          if (this.error.length) {
+            this.error = [];
+          }
           this.request(data);
-          this.error = [];
         })
         .catch(error => {
           /**
            * Create new error.
            */
-          this.error.push(error);
+          if (!this.error.length) {
+            this.error.push(error);
+          }
           console.log(error);
         })
         .finally(() => {
@@ -42,10 +48,10 @@ export default {
 
     catchErrors(isValid) {
       return new Promise((resolve, reject) => {
-        if (!isValid) {
-          reject("Something went wrong.");
-        } else {
+        if (isValid) {
           resolve();
+        } else {
+          reject("Something went wrong.");
         }
       });
     },

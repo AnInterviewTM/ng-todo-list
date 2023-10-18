@@ -10,14 +10,35 @@
               </b-col>
             </b-row>
           </b-col>
-          <b-col cols="auto">
+          <b-col cols="auto" v-if="!Object.keys(getCurrentUser).length">
             <NgTodoListModalComposer component-name="NgTodoListAuthForm">
               <template #default="{ handler }">
-                <NgTodoListButtonControl class="button button--style_green" @event="handler"
-                  >AUTH</NgTodoListButtonControl
+                <NgTodoListButtonControl
+                  class="button button--style_green"
+                  @event="handler"
+                  >SIGNIN</NgTodoListButtonControl
                 >
               </template>
             </NgTodoListModalComposer>
+          </b-col>
+          <b-col cols="auto" v-if="Object.keys(getCurrentUser).length">
+            <b-row>
+              <b-col cols="auto">
+                <router-link
+                  class="button button--style_green"
+                  to="/cabinet/profile-page"
+                  exact
+                  >PROFILE</router-link
+                >
+              </b-col>
+              <b-col cols="auto">
+                <NgTodoListButtonControl
+                  class="button button--style_grays"
+                  @event="signOut"
+                  ><i class="fa fa-sign-out"></i
+                ></NgTodoListButtonControl>
+              </b-col>
+            </b-row>
           </b-col>
         </b-row>
       </b-container>
@@ -26,16 +47,28 @@
 </template>
 
 <script lang="js">
-  import { COMMON_ROUTER } from "../../../router/commons";
+  import { MENU } from "../../../router/commons";
+  import { mapGetters } from "vuex";
 
   export default {
     name: "NgTodoListHeaderModule",
 
     data() {
       return {
-        menu: COMMON_ROUTER,
+        menu: MENU,
       };
     },
+
+    methods: {
+      signOut() {
+        sessionStorage.removeItem("user");
+        location.reload();
+      }
+    },
+
+    computed: {
+      ...mapGetters("users", ["getCurrentUser"])
+    }
   };
 </script>
 

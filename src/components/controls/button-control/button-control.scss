@@ -1,20 +1,22 @@
 .button {
   &--style {
     &_green {
-      padding: 10px 30px 10px 30px;
+      padding: 10px 10px 10px 10px;
       background: var(--green-1);
-      color: var(--white-1);
+      color: var(--white-1) !important;
       font-weight: var(--bold);
+      display: inline-block;
     }
 
     &_grays {
-      padding: 10px 30px 10px 30px;
-      background: var(--grays-1);
+      padding: 10px 10px 10px 10px;
+      // background: var(--grays-1);
       color: var(--white-1);
       font-weight: var(--bold);
     }
   }
 
+  border-radius: 4px;
   outline: none;
   border: none;
   width: 100%;

@@ -49,6 +49,8 @@
 </template>
 
 <script lang="js">
+  import { getUsersAPI } from "../../../request/services/users";
+  import { mapActions } from "vuex";
   import FormMixin from "../form-mixin";
 
   export default {
@@ -69,9 +71,24 @@
 
     methods: {
       request(data) {
-        console.log("SEND", data);
-      }
-    }
+        getUsersAPI().then(responce => {
+          const user = responce.find(user =>
+            user.username === data.username && user.phone === data.phone
+          );
+
+          if (user) {
+            sessionStorage.setItem("user", JSON.stringify(user));
+            this.setCurrentUser(user);
+
+            this.$router.push("/cabinet/profile-page");
+            this.$emit("close"); // {emit} close modal.
+          } else {
+            this.error.push("User not found.");
+          }
+        });
+      },
+      ...mapActions("users", ["setCurrentUser"])
+    },
   };
 </script>
 

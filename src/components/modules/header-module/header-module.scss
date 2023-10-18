@@ -1,11 +1,21 @@
 .header-module {
+  .fa.fa-sign-out {
+    color: var(--grays-1);
+    font-size: 20px;
+  }
+
   &__ {
     &container {
       .router-link-active {
         color: var(--green-1);
       }
 
-      a{
+      button,
+      a {
+        text-transform: uppercase;
+      }
+
+      a {
         text-decoration: none;
         font-weight: var(--bold);
         color: var(--black-1);

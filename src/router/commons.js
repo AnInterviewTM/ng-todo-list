@@ -1,4 +1,15 @@
-export const COMMON_ROUTER = [
+const PROFILE_ROUTER = [
+  {
+    component: () => import("../pages/cabinet-page/profile-page/profile-page"),
+    path: "/cabinet/profile-page",
+    name: "profile-page",
+    text: "PROFILE PAGE",
+    role: ["user"],
+    icon: null
+  }
+];
+
+const COMMON_ROUTER = [
   {
     component: () => import("../pages/home-page/home-page"),
     path: "/",
@@ -16,3 +27,9 @@ export const COMMON_ROUTER = [
     icon: null
   }
 ];
+
+export const ROUTERS = [
+  ...PROFILE_ROUTER, ...COMMON_ROUTER
+];
+
+export const MENU = [...COMMON_ROUTER];
