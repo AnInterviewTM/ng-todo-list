@@ -1,13 +1,13 @@
 <template>
   <section>
-    <HeaderModule></HeaderModule>
-    <slot></slot>
+    <NgTodoListHeaderModule />
+    <slot />
   </section>
 </template>
 
 <script lang="js">
   export default {
-    name: "DefaultLayout",
+    name: "NgTodoListDefaultLayout",
 
     data() {
       return {
@@ -16,7 +16,3 @@
     }
   };
 </script>
-
-<style lang="scss">
-  @import "default-layout.scss";
-</style>

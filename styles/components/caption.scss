@@ -1,0 +1,22 @@
+.caption {
+
+  &-- {
+    &fs_sm {
+      font-size: 14px;
+    }
+
+    &fs_xl {
+      font-size: 20px;
+    }
+  }
+
+  &:first-letter {
+    text-transform: uppercase;
+  }
+  padding: 0;
+  margin: 0;
+}
+
+.pointer {
+  cursor: pointer;
+}

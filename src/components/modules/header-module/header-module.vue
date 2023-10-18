@@ -5,20 +5,40 @@
         <b-row align-h="between" align-v="center">
           <b-col cols="auto">
             <b-row>
-              <b-col cols="auto">
-                <ul class="header-ul">
-                  <li class="header-ul__li">
-                    <router-link to="/" exact>HOME</router-link>
-                  </li>
-                  <li class="header-ul__li">
-                    <router-link to="/news-page" exact>NEWS</router-link>
-                  </li>
-                </ul>
+              <b-col v-for="item in menu" :key="item.id" cols="auto">
+                <router-link :to="item.path" exact>{{ item.text }}</router-link>
               </b-col>
             </b-row>
           </b-col>
-          <b-col cols="auto">
-            <b-button>LOGIN</b-button>
+          <b-col cols="auto" v-if="!Object.keys(getCurrentUser).length">
+            <NgTodoListModalComposer component-name="NgTodoListAuthForm">
+              <template #default="{ handler }">
+                <NgTodoListButtonControl
+                  class="button button--style_darks"
+                  @event="handler"
+                  >SIGNIN</NgTodoListButtonControl
+                >
+              </template>
+            </NgTodoListModalComposer>
+          </b-col>
+          <b-col cols="auto" v-if="Object.keys(getCurrentUser).length">
+            <b-row>
+              <b-col cols="auto">
+                <router-link
+                  class="button button--style_darks cabinet"
+                  to="/cabinet/profile-page"
+                  exact
+                  >PROFILE</router-link
+                >
+              </b-col>
+              <b-col cols="auto">
+                <NgTodoListButtonControl
+                  class="button button--style_grays"
+                  @event="signOut"
+                  ><i class="fa fa-sign-out"></i
+                ></NgTodoListButtonControl>
+              </b-col>
+            </b-row>
           </b-col>
         </b-row>
       </b-container>
@@ -27,24 +47,31 @@
 </template>
 
 <script lang="js">
+  import { MENU } from "../../../router/commons";
+  import { mapGetters } from "vuex";
+
   export default {
-    name: "HeaderModule",
+    name: "NgTodoListHeaderModule",
 
     data() {
       return {
-        formData: {
-          logo: {
-            blankColor: "#777",
-            blank: true,
-            width: 150,
-            height: 38,
-          }
-        }
+        menu: MENU,
       };
+    },
+
+    methods: {
+      signOut() {
+        sessionStorage.removeItem("user");
+        location.reload();
+      }
+    },
+
+    computed: {
+      ...mapGetters("users", ["getCurrentUser"])
     }
   };
 </script>
 
 <style lang="scss">
-  @import "header-module.scss";
+  @import "header-module";
 </style>

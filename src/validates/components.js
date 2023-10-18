@@ -1,7 +1,7 @@
 import Vue from "vue";
 
 import { ValidationObserver, ValidationProvider, localize } from "vee-validate";
-import { dictionary } from "./constants.js";
+import { dictionary } from "./constants";
 
 Vue.component("ValidationObserver", ValidationObserver);
 Vue.component("ValidationProvider", ValidationProvider);

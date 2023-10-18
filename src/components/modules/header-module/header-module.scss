@@ -1,46 +1,29 @@
 .header-module {
+  .fa.fa-sign-out {
+    color: var(--grays-1);
+    font-size: 20px;
+  }
+
   &__ {
     &container {
-      padding: 12px 0;
-    }
-  }
-
-  background-color: #e2e2e2;
-}
-
-.header-ul {
-  list-style: none;
-
-  display: flex;
-
-  padding: 0;
-  margin: 0;
-
-  &__li {
-    margin: 0 0 0 12px;
-
-    &:first-child {
-      margin: 0 0 0 0;
-    }
-
-    a {
-      background-color: #6c757d;
-      color: #ffffff;
-      
-      text-decoration: none;
-      display: inline-block;
-      padding: 6px 12px;
-      border-radius: 5px;
-
-      font-weight: 700;
-
-      &:hover {
-        background-color: #565e64;
+      .router-link-active:not(.cabinet) {
+        color: var(--green-1);
       }
+
+      button,
+      a {
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: var(--bold);
+      }
+
+      a:not(.cabinet) {
+        color: var(--black-1);
+      }
+
+      padding: 12px 0 12px 0;
     }
   }
-}
 
-.router-link-active {
-  background-color: #198754 !important;
+  background: var(--white-1);
 }

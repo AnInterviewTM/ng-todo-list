@@ -1,0 +1,22 @@
+.button {
+  &--style {
+    &_darks {
+      background: var(--grays-1);
+      font-weight: var(--bold);
+      color: var(--white-1);
+      display: inline-block;
+      padding: 10px;
+    }
+
+    &_grays {
+      font-weight: var(--bold);
+      color: var(--white-1);
+      padding: 10px;
+    }
+  }
+
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  width: 100%;
+}

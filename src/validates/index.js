@@ -1,5 +1,5 @@
-import "./components.js";
-import "./extends.js";
+import "./components";
+import "./extends";
 
 export const VALIDATE = async context =>
   (await context.$refs)

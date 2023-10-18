@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-        <meta charset="utf-8" />
+  <head>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
 
-        <title><%= htmlWebpackPlugin.options.title %></title>
-    </head>
-    <body>
-        <noscript>
-            <strong
-                >We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't
-                work properly without JavaScript enabled. Please enable it to
-                continue.</strong
-            >
-        </noscript>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta charset="utf-8" />
 
-        <div id="app"></div>
-    </body>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+  <body class="scroll--thin">
+    <noscript>
+      <strong
+        >We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work
+        properly without JavaScript enabled. Please enable it to
+        continue.</strong
+      >
+    </noscript>
+
+    <div id="app"></div>
+  </body>
 </html>
