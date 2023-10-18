@@ -1,5 +1,16 @@
+.bg {
+  &-- {
+    &white-1 {
+      background: var(--white-1);
+    }
+  }
+}
+
 .c {
   &-- {
+    &blue-1 {
+      color: var(--blue-1);
+    }
     &red-2 {
       color: var(--red-2);
     }

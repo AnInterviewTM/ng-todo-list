@@ -14,7 +14,7 @@
             <NgTodoListModalComposer component-name="NgTodoListAuthForm">
               <template #default="{ handler }">
                 <NgTodoListButtonControl
-                  class="button button--style_green"
+                  class="button button--style_darks"
                   @event="handler"
                   >SIGNIN</NgTodoListButtonControl
                 >
@@ -25,7 +25,7 @@
             <b-row>
               <b-col cols="auto">
                 <router-link
-                  class="button button--style_green"
+                  class="button button--style_darks cabinet"
                   to="/cabinet/profile-page"
                   exact
                   >PROFILE</router-link

@@ -3,9 +3,9 @@ import { ENDPOINTS } from "../ENDPOINT";
 
 const resource = new ResourceAPI();
 
-export function getUsersListAPI(body) {
+export function getTodosListAPI(body) {
   return resource.fetchData({
-    request: ENDPOINTS.USERS,
+    request: ENDPOINTS.TODOS,
     method: "GET", body
   });
 }

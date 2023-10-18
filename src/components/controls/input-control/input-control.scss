@@ -15,6 +15,10 @@
       order: 2;
     }
 
+    &input {
+      border: 2px solid var(--grays-1);
+    }
+
     &label {
       margin-bottom: 5px;
       font-size: 12px;

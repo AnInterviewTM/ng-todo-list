@@ -6,18 +6,18 @@
 
   &__ {
     &container {
-      .router-link-active {
+      .router-link-active:not(.cabinet) {
         color: var(--green-1);
       }
 
       button,
       a {
         text-transform: uppercase;
-      }
-
-      a {
         text-decoration: none;
         font-weight: var(--bold);
+      }
+
+      a:not(.cabinet) {
         color: var(--black-1);
       }
 

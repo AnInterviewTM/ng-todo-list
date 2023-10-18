@@ -1,18 +1,17 @@
 .button {
   &--style {
-    &_green {
-      padding: 10px 10px 10px 10px;
-      background: var(--green-1);
-      color: var(--white-1) !important;
+    &_darks {
+      background: var(--grays-1);
       font-weight: var(--bold);
+      color: var(--white-1);
       display: inline-block;
+      padding: 10px;
     }
 
     &_grays {
-      padding: 10px 10px 10px 10px;
-      // background: var(--grays-1);
-      color: var(--white-1);
       font-weight: var(--bold);
+      color: var(--white-1);
+      padding: 10px;
     }
   }
 

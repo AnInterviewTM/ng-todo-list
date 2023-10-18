@@ -1,5 +1,3 @@
-// import { getUsersAPI } from "../../request/services/users";
-
 export const usersModule = {
   namespaced: true,
 

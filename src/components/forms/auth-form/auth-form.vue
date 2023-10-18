@@ -49,7 +49,7 @@
 </template>
 
 <script lang="js">
-  import { getUsersAPI } from "../../../request/services/users";
+  import { getUsersListAPI } from "../../../request/services/users";
   import { mapActions } from "vuex";
   import FormMixin from "../form-mixin";
 
@@ -71,7 +71,7 @@
 
     methods: {
       request(data) {
-        getUsersAPI().then(responce => {
+        getUsersListAPI().then(responce => {
           const user = responce.find(user =>
             user.username === data.username && user.phone === data.phone
           );
@@ -91,7 +91,3 @@
     },
   };
 </script>
-
-<style lang="scss">
-  @import "auth-form";
-</style>

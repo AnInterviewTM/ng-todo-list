@@ -1,7 +1,7 @@
 <template>
   <NgTodoListDefaultLayout>
     <b-container fluid="sm">
-      <section class="section">News page content</section>
+      <section class="section section--h_md mt-4 mb-4 p-4">News page content</section>
     </b-container>
   </NgTodoListDefaultLayout>
 </template>

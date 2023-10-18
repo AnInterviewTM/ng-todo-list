@@ -1,7 +1,8 @@
 import stores from "../../store/index";
 import router from "../index";
 
-router.beforeEach((to, from, next) => {
+router.beforeEach(async (to, from, next) => {
+  await stores.dispatch("users/loadCurrentUser");
   const currentUser = stores.getters["users/getCurrentUser"];
 
   if (
