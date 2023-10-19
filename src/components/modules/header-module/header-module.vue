@@ -16,7 +16,7 @@
                 <NgTodoListButtonControl
                   class="button button--style_darks"
                   @event="handler"
-                  >SIGNIN</NgTodoListButtonControl
+                  >SIGN IN</NgTodoListButtonControl
                 >
               </template>
             </NgTodoListModalComposer>

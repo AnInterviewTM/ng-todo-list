@@ -5,8 +5,8 @@ export const todosModule = {
 
   actions: {
     getTodosListAPI({ commit }) {
-      getTodosListAPI().then(responce => {
-        commit("setTodosList", responce);
+      getTodosListAPI().then(response => {
+        commit("setTodosList", response);
       });
     }
   },

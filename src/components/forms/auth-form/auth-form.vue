@@ -71,8 +71,8 @@
 
     methods: {
       request(data) {
-        getUsersListAPI().then(responce => {
-          const user = responce.find(user =>
+        getUsersListAPI().then(response => {
+          const user = response.find(user =>
             user.username === data.username && user.phone === data.phone
           );
 

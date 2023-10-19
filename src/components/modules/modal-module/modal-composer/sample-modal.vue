@@ -20,10 +20,11 @@ export default {
   },
 
   created() {
+    const esc_key = 27;
     document.addEventListener(
       "keyup",
       event => {
-        if (27 === event.keyCode) {
+        if (esc_key === event.keyCode) {
           this.$emit("close");
         }
       },
